@@ -2,9 +2,10 @@
 
 Use this script to answer the question. 
 
-```python is_this_pdf_missing_text.py <path/to/pdf>```
+```python is_pdf_missing_text.py <path/to/pdf>```
 
-```python is_this_pdf_missing_text.py --help
+```
+python is_pdf_missing_text.py --help
 
 Usage: is_pdf_missing_text.py [OPTIONS] [PATHS]...
 
