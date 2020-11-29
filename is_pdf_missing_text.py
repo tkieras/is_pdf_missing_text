@@ -18,14 +18,18 @@ def report_text_presence(paths, verbose):
     Note: By default the paths returned are those of files missing text. Use the verbose flag to change this.
 
     """
-
-    msg_yes = POSITIVE + "\t: " if verbose else ""
-    msg_no = NEGATIVE + "\t: "
-
-    report_response = lambda p : "{} {}".format((msg_yes if is_pdf_missing_text(p) else msg_no), p)
-
-    for path in paths: print(report_response(path))
-       
+    
+    for path in paths:
+        result = is_pdf_missing_text(path)
+        
+        if verbose:
+            report = POSITIVE + "\t: " if result else NEGATIVE + "\t: "
+            report += path
+        else:
+            report = path if result else None
+        
+        if report:
+            print(report)
 
 
 def is_pdf_missing_text(path):
